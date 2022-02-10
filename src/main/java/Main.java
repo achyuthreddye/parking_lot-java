@@ -5,5 +5,8 @@ public class Main {
         for (int i = 0; i < parkingFloor.getParkingFloor().length; i++) {
             System.out.println(parkingFloor.getParkingSlot(i).getSlotType());
         }
+        System.out.println(parkingFloor.getAllFreeSlotCountInFloor().get("truck"));
+        System.out.println(parkingFloor.getAllFreeSlotCountInFloor().get("bike"));
+        System.out.println(parkingFloor.getAllFreeSlotCountInFloor().get("car"));
     }
 }

@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class ParkingFloor {
     private int totalNoOfSlots;
     private int noOfTrucks;
@@ -38,6 +41,39 @@ public class ParkingFloor {
             }
         }
         return freeSlotInFloor;
-
     }
+
+    public Map<String, Integer> getAllFreeSlotCountInFloor(){
+        Map<String, Integer> freeParkingSlotCount=new HashMap();
+
+        for (int i = 0; i < this.totalNoOfSlots; i++) {
+            if (parkingFloor[i].getSlotType() == "truck" && !parkingFloor[i].isParked()){
+                freeParkingSlotCount.put("truck", freeParkingSlotCount.getOrDefault("truck",0) + 1);
+            }
+            if (parkingFloor[i].getSlotType() == "bike" && !parkingFloor[i].isParked()){
+                freeParkingSlotCount.put("bike", freeParkingSlotCount.getOrDefault("bike",0) + 1);
+            }
+            if (parkingFloor[i].getSlotType() == "car" && !parkingFloor[i].isParked()){
+                freeParkingSlotCount.put("car", freeParkingSlotCount.getOrDefault("car",0) + 1);
+            }
+        }
+        return freeParkingSlotCount;
+    }
+//    public Map<String, String[]> getAllFreeSlotsInFloor(){
+//        Map<String, String[]> freeParkingSlots=new HashMap();
+//
+//        for (int i = 0; i < this.totalNoOfSlots; i++) {
+//            if (parkingFloor[i].getSlotType() == "truck"){
+//                freeParkingSlots.put("truck", freeParkingSlots.getOrDefault("truck",0) + 1);
+//            }
+//            if (parkingFloor[i].getSlotType() == "bike"){
+//                freeParkingSlots.put("bike", freeParkingSlots.getOrDefault("bike",0) + 1);
+//            }
+//            if (parkingFloor[i].getSlotType() == "car"){
+//                freeParkingSlots.put("car", freeParkingSlots.getOrDefault("car",0) + 1);
+//            }
+//        }
+//        return freeParkingSlots;
+//    }
+
 }
