@@ -17,6 +17,10 @@ public class Slot {
         return slotType;
     }
 
+    public boolean isParked() {
+        return isParked;
+    }
+
     public Vehicle getVehicle() {
         return vehicle;
     }

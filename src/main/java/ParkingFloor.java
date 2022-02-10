@@ -30,8 +30,14 @@ public class ParkingFloor {
         return parkingFloor[slotId];
     }
     public int getNearestSlotInFloor(String vehicleType){
-//        if(ve)
-        return 5;
+        int freeSlotInFloor= -1;
+        for (int i = 0; i < this.totalNoOfSlots; i++) {
+            if((parkingFloor[i].getSlotType() == vehicleType) && !parkingFloor[i].isParked()){
+                freeSlotInFloor = parkingFloor[i].getSlotId();
+                break;
+            }
+        }
+        return freeSlotInFloor;
 
     }
 }
