@@ -29,4 +29,9 @@ public class ParkingFloor {
     public Slot getParkingSlot(int slotId){
         return parkingFloor[slotId];
     }
+    public int getNearestSlotInFloor(String vehicleType){
+//        if(ve)
+        return 5;
+
+    }
 }
